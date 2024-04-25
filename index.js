@@ -228,7 +228,9 @@ app.put("/bruxos/:id", async (req, res) => {
 app.delete("/bruxos/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    await pool.query("DELETE FROM bruxos WHERE id = $1", [id]);
+    const resultado = await pool.query("DELETE FROM bruxos WHERE id = $1", [
+      id,
+    ]);
     if (resultado.rowCount === 0) {
       return res.status(404).send({
         status: "erro",
@@ -344,7 +346,9 @@ app.put("/varinhas/:id", async (req, res) => {
 app.delete("/varinhas/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    await pool.query("DELETE FROM varinhas WHERE id = $1", [id]);
+    const resultado = await pool.query("DELETE FROM varinhas WHERE id = $1", [
+      id,
+    ]);
     if (resultado.rowCount === 0) {
       return res.status(404).send({
         status: "erro",
