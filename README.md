@@ -2,7 +2,7 @@
 
 [![Capa do Projeto](https://i.imgur.com/QYJ9QUM.jpg)](https://github.com/caiquenaimi/harry-potter)
 
-Este é o repositório de um projeto abrangente que combina o desenvolvimento de uma API e um site público dedicado aos amantes do universo de Harry Potter. O projeto, construído com tecnologias avançadas como Next.js, TypeScript, Tailwind CSS e PostgreSQL, tem como objetivo oferecer aos fãs um guia interativo e informativo que abranja todos os aspectos do mundo mágico de Harry Potter. O guia fornece detalhes abrangentes sobre os personagens da série, explorando suas origens, habilidades e impacto na trama, proporcionando uma experiência imersiva e enriquecedora para os entusiastas do bruxinho.
+Este é o repositório de um projeto completo que envolve o desenvolvimento de uma API para os aficionados pelo universo de Harry Potter. O projeto, construído utilizando tecnologias avançadas como Express.js, PostgreSQL e Node.js, tem como propósito fornecer aos fãs um guia interativo e informativo que cubra todos os aspectos do mundo mágico de Harry Potter. Este guia oferece detalhes abrangentes sobre os personagens da série, explorando suas origens, habilidades e impacto na trama, proporcionando uma experiência imersiva e enriquecedora para os entusiastas do bruxinho.
 
 ## Visão Geral
 Este é um projeto simples de backend desenvolvido com Express.js e PostgreSQL. Ele fornece uma API para gerenciar informações de bruxos incluindo nome, idade, casa, habilidade, sangue e patrono. E varinhas incluindo material, comprimento, núcleo e data de criação.
