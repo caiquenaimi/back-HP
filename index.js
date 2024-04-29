@@ -53,10 +53,9 @@ app.get("/bruxos/:id", async (req, res) => {
 
 app.get("/bruxos/casa/:casa", async (req, res) => {
     try {
-        let { casa } = req.params;
-        casa = casa.toLowerCase();
-        const resultado = await pool.query("SELECT * FROM bruxos WHERE casa = $1", [
-            casa,
+        const { casa } = req.params;
+        const resultado = await pool.query("SELECT * FROM bruxos WHERE LOWER(casa) = $1", [
+            casa.toLowerCase(),
         ]);
         if (resultado.rowCount === 0) {
             return res.status(404).send({
@@ -79,8 +78,8 @@ app.get("/bruxos/nome/:nome", async (req, res) => {
     try {
         const { nome } = req.params;
         const resultado = await pool.query(
-            "SELECT * FROM bruxos WHERE nome LIKE $1",
-            [`%${nome}%`]
+            "SELECT * FROM bruxos WHERE LOWER(nome) LIKE $1",
+            [`%${nome.toLowerCase()}%`]
         );
         if (resultado.rowCount === 0) {
             return res.status(404).send({
