@@ -121,13 +121,13 @@ app.post("/bruxos", async (req, res) => {
                 mensagem: "Idade inválida",
             });
         }
-        if (sangueArr.includes(sangue) === false) {
+        if (!sangueArr.includes(sangue)) {
             return res.status(400).send({
                 status: "erro",
                 mensagem: "Tipo de sangue inválido",
             });
         }
-        if (casaArr.includes(casa) === false) {
+        if (!casaArr.includes(casa)) {
             return res.status(400).send({
                 status: "erro",
                 mensagem: "Casa inválida",
@@ -163,6 +163,7 @@ app.put("/bruxos/:id", async (req, res) => {
     try {
         const { id } = req.params;
         let sangueArr = ["puro", "mestiço", "trouxa"];
+        let casaArr = ["grifinória", "sonserina", "corvinal", "lufa-lufa"];
         let { nome, idade, casa, habilidade, sangue, patrono } = req.body;
         casa = casa.toLowerCase();
         sangue = sangue.toLowerCase();
@@ -178,18 +179,13 @@ app.put("/bruxos/:id", async (req, res) => {
                 mensagem: "Idade inválida",
             });
         }
-        if (sangueArr.includes(sangue) === false) {
+        if (!sangueArr.includes(sangue)) {
             return res.status(400).send({
                 status: "erro",
                 mensagem: "Tipo de sangue inválido",
             });
         }
-        if (
-            casa !== "grifinória" &&
-            casa !== "sonserina" &&
-            casa !== "corvinal" &&
-            casa !== "lufa-lufa"
-        ) {
+        if (!casaArr.includes(casa)) {
             return res.status(400).send({
                 status: "erro",
                 mensagem: "Casa inválida",
